@@ -1,0 +1,12 @@
+.layout-button {
+    background-color: #858e99;
+    width: 14em;
+    height: 4.5em;
+    border: none;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.submit-button {
+    width: 100%;
+}

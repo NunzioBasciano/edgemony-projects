@@ -1,0 +1,39 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h4 {
+    font-family: "Oswald", sans-serif;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+
+    color: var(--darkBlack);
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--lightBlack);
+}
+
+h4 {
+    font-size: 2.25rem;
+    font-weight: 400;
+}
+
+
+
+.main-section li,
+p {
+    color: var(--greyP);
+}

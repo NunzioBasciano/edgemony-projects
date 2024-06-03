@@ -1,0 +1,16 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    /* nascondo la scrollbar dalla navbar fissata */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.content {
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+}

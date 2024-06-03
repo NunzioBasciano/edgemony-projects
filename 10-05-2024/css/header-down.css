@@ -1,0 +1,22 @@
+.header-down {
+    background-color: var(--white);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.your-logo {
+    margin: 1.75% 0 0 7.8%;
+}
+
+.hamburger-menu {
+    margin: 1.5% 7.5% 0 0;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .header-down {
+        margin-top: 5%;
+    }
+}

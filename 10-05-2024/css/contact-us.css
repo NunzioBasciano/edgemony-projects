@@ -1,0 +1,100 @@
+.contact-us-background {
+    display: flex;
+    background-image: url(/images/city.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact-us-container {
+    background-color: white;
+    display: flex;
+    margin: 64px auto;
+    width: 85%;
+    height: 100vh;
+    padding: 0.6em 2.6em;
+    gap: 32px;
+    box-sizing: border-box;
+}
+
+.contact-us-container-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+
+.contact-us-container-left h2 {
+    margin: 0;
+    color: var(--darkBlack);
+}
+
+.contact-us-container-left h3 {
+    font-weight: 400;
+    color: var(--darkBlack);
+    margin: 0;
+}
+
+.contact-us-container-left h6 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--darkBlack);
+    margin: 0;
+    padding: 0;
+}
+
+.contact-us-container-left div {
+    border-top: 1px solid #dfe3e8;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-items: baseline;
+    padding-top: 1.5em;
+}
+
+.contact-us-container-right {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 1em 1em;
+}
+
+.contact-us-container-right p {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.contact-us-container-right h4 {
+    margin: 0;
+    padding-top: 0.1em;
+}
+
+.underline {
+    border: none;
+    border-bottom: 1px solid var(--lightBlack);
+    width: 100%;
+    margin-top: 2em;
+}
+
+.contact-us-container-right form {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 0px) and (max-width: 991px) {
+
+    .contact-us-container {
+        display: block;
+        height: auto;
+    }
+
+    .contact-us-container-left {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .contact-us-container-right {
+        width: 100%;
+        height: auto;
+    }
+}
