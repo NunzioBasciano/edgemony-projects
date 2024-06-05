@@ -1,0 +1,60 @@
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    padding: 8px;
+    margin: 8px;
+    background-color: rgb(215, 210, 210);
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+button {
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(111, 17, 17);
+    color: white;
+    width: 50%;
+    height: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-window {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(62, 62, 62, 0.822);
+    color: white;
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-button {
+    width: 20%;
+}
+
+.yes-button,
+.no-button {
+    width: 40%;
+}
+
+.container-yes-no {
+    display: flex;
+    justify-content: space-around;
+}
