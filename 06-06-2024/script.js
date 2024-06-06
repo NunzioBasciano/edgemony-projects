@@ -10,15 +10,11 @@
 va bene anche una card o un titolo, 
 comunque che sia qualcosa ottenuta dalla risposta della nostra chiamata */
 
-
-
 const buttonEl = document.querySelector('.builder');
 
 buttonEl.addEventListener('click', function () {
 
-    const bodyEl = document.querySelector('body');
-    bodyEl.className = 'body-element';
-
+    const containerCardEl = document.querySelector('.container-cards');
 
     fetch("https://fakestoreapi.com/products").then((res) => res.json()).then((data) => {
 
@@ -32,7 +28,7 @@ buttonEl.addEventListener('click', function () {
             };
             // creazione contenitore card
             const containerEL = document.createElement('div');
-            containerEL.className = 'card__container';
+            containerEL.className = 'card';
 
             // creazione sezione id
             const idEl = document.createElement('p');
@@ -77,13 +73,12 @@ buttonEl.addEventListener('click', function () {
         }
 
         data.forEach(el => {
-            bodyEl.insertAdjacentElement('afterbegin', cardElGen(el));
+            containerCardEl.append(cardElGen(el));
         });
-
 
     });
 
     buttonEl.className = 'hidden';
 
 
-})
+}) 
