@@ -1,0 +1,11 @@
+.container-input {
+    background-color: #161616;
+    padding: 8px 32px 16px 32px;
+}
+
+input {
+    height: 30px;
+    border-radius: 4px;
+    background-color: aliceblue;
+    margin: 16px;
+}

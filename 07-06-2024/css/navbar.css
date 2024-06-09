@@ -1,0 +1,30 @@
+/* NAVBAR */
+nav {
+    background-color: #161616;
+    color: white;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+
+}
+
+.brand-logo {
+    height: 50px;
+    background-color: #161616;
+    border-radius: 20%;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
+}
+
+li {
+    cursor: pointer;
+}
+
+/* END-NAVBAR */

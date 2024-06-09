@@ -1,18 +1,43 @@
-.movie-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    display: inline-block;
-    vertical-align: top;
-    width: 200px;
+@import url(./css/reset.css);
+@import url(./css/navbar.css);
+@import url(./css/searchbar.css);
+@import url(./css/card.css);
+@import url(./css/media.css);
+
+
+.container-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #161616;
 }
 
-.movie-card img {
-    max-width: 100%;
-    border-radius: 4px;
+
+.pagination {
+    margin: 64px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
 }
 
-.movie-card h2 {
-    font-size: 1.2em;
+.previous,
+.next,
+span {
+    border: 2px solid #018850;
+    border-radius: 16px;
+    padding: 8px;
+    width: 100px;
+    color: #018850;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    width: 50px;
+    border-radius: 40%;
+    background-color: #018850;
+    color: #161616;
+    font-weight: 800;
+
 }
