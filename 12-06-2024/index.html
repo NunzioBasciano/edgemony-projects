@@ -4,20 +4,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="./script.js" type="module"></script>
 	<title>Document</title>
 </head>
 
 <body>
-	<form>
+
+	<!-- FORM PER INSERIRE IL NUOVO PRODOTTO. LO STRUTTURIAMO IN BASE ALLE RICHIESTE ALL'ESEMPIO FORNITO NELLA DOCUMENTAZIONE-->
+	<form action="submit" style="display: flex; flex-direction: column; max-width: 300px; gap: 12px">
 		<input class="title" type="text" placeholder="title" />
 		<input class="price" type="number" placeholder="price" />
 		<input class="description" type="text" placeholder="description" />
 		<input class="category-id" type="number" placeholder="category id" />
 		<input class="images" type="text" placeholder="images" />
 		<button class="button-send">send</button>
-		<button class="button-delete">delete</button>
 	</form>
+	<button class="button-delete">send</button>
+	<p class="message-delete"></p>
+
+
+	<script src="script.js"></script>
 </body>
 
 </html>
