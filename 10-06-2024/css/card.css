@@ -1,0 +1,33 @@
+.card {
+    border-radius: 4px;
+    width: 90%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+}
+
+.card-title {
+    font-size: 32px;
+    margin: 16px 8px;
+}
+
+.card-description {
+    margin: 8px;
+}
+
+.card-vote {
+    margin: 8px;
+    margin-top: auto;
+    color: #018850;
+    font-weight: bold;
+
+}

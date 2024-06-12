@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <img src="./images/icon.png" alt="icona-brand" class='brand-logo'>
+        <ul>
+            <li id="popular">Popolari</li>
+            <li id="top-rated">Top Rated</li>
+            <li id="upcoming"> Uncoming</li>
+            <li id="now-playing"> Now Playing</li>
+        </ul>
+    </nav>
+    <div class="container-input">
+        <input placeholder="Search for a movie..." type="text" class="searchbar">
+    </div>
+    <div class="container-card"></div>
+    <div class="pagination">
+        <button class="previous" disabled>Previous</button>
+        <span id="page-number">1</span>
+        <button class="next">Next</button>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
