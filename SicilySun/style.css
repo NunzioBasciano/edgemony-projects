@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-card {
+    margin: 0 auto;
+}
+
+.city-card {
+    width: 90%;
+    border: 2px solid red;
+    border-radius: 16px;
+    margin: 16px auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.city-card-title {
+    border: 2px solid black;
+}
+
+.city-card-weather-image {
+    border: 2px solid black;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.city-card-container-temperature {
+    border: 2px solid black;
+}
+
+.city-card-temperature-title,
+.city-card-wind-title,
+.city-card-rain-title,
+.city-card-clouds-title {
+    text-align: center;
+    margin: 8px;
+}
+
+.city-card-temperature-bottom-section,
+.city-card-wind-bottom-section {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.city-card-temperature-section-left,
+.city-card-temperature-section-right,
+.city-card-wind-container-speed,
+.city-card-wind-container-direction,
+.city-card-container-rain,
+.city-card-container-clouds {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+}
+
+.city-card-container-wind {
+    border: 2px solid red;
+}
+
+.city-card-container-rain-clouds {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-around;
+}
