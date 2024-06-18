@@ -1,0 +1,23 @@
+.select-section {
+    background-color: #4799d1;
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.select-section img {
+    height: 50px;
+    width: 50px;
+    clip-path: polygon(50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0% 25%);
+}
+
+select {
+    border-radius: 8px;
+    padding: 16px;
+}

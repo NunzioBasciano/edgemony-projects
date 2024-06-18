@@ -1,11 +1,11 @@
 import { API_KEY } from "../key.js";
 const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
-const province = ['trapani', 'palermo', 'catania', 'siracusa', 'ragusa', 'enna', 'caltanissetta', 'agrigento',]
 
-const cardGen = (obj) => {
+const cardGen = (obj, backgroundImage) => {
 
     const containerEl = document.createElement('div');
     containerEl.className = 'city-card';
+    containerEl.style.backgroundImage = `url(${backgroundImage})`
 
     const titleCard = document.createElement('h2');
     titleCard.textContent = obj.name;
@@ -33,7 +33,7 @@ const cardGen = (obj) => {
 
     const temperatureValueEl = document.createElement('h4');
     temperatureValueEl.className = 'city-card-temperature-value';
-    temperatureValueEl.textContent = obj.main.temp;
+    temperatureValueEl.textContent = `${obj.main.temp} °C`;
 
     const temperatureFeelsLikeEl = document.createElement('p');
     temperatureFeelsLikeEl.className = 'city-card-temperature-feels-like';
@@ -41,7 +41,7 @@ const cardGen = (obj) => {
 
     const temperatureFeelsLikeValueEl = document.createElement('p');
     temperatureFeelsLikeValueEl.className = 'city-card-temperature-feels-like-value';
-    temperatureFeelsLikeValueEl.textContent = obj.main.feels_like;
+    temperatureFeelsLikeValueEl.textContent = `${obj.main.feels_like} °C`;
 
     const containerTempRightEl = document.createElement('div');
     containerTempRightEl.className = 'city-card-temperature-section-right';
@@ -55,7 +55,7 @@ const cardGen = (obj) => {
 
     const tempMinValueEl = document.createElement('h4');
     tempMinValueEl.className = 'city-card-temperature-min-value';
-    tempMinTitleEl.textContent = obj.main.temp_min;
+    tempMinValueEl.textContent = `${obj.main.temp_min} °C`;
 
     const containerTempMaxEl = document.createElement('div');
     containerTempMaxEl.className = 'city-card-temperature-max-container';
@@ -66,7 +66,7 @@ const cardGen = (obj) => {
 
     const tempMaxValueEl = document.createElement('h4');
     tempMaxValueEl.className = 'city-card-temperature-max-value';
-    tempMaxValueEl.textContent = obj.main.temp_max;
+    tempMaxValueEl.textContent = `${obj.main.temp_max} °C`;
 
     const containerWindEl = document.createElement('div');
     containerWindEl.className = 'city-card-container-wind';
@@ -87,7 +87,7 @@ const cardGen = (obj) => {
 
     const windSpeedValueEl = document.createElement('h4');
     windSpeedValueEl.className = 'city-card-wind-speed-value';
-    windSpeedValueEl.textContent = obj.wind.speed;
+    windSpeedValueEl.textContent = `${obj.wind.speed} m/s`;
 
     const containerWindDirectionEl = document.createElement('div');
     containerWindDirectionEl.className = 'city-card-wind-container-direction';
@@ -98,7 +98,8 @@ const cardGen = (obj) => {
 
     const windDirectionValueEl = document.createElement('h4');
     windDirectionValueEl.className = 'city-card-wind-direction-value';
-    windDirectionValueEl.textContent = obj.wind.deg;
+
+    windDirectionValueEl.textContent = getWindDirection(obj.wind.deg);
 
     const containerRainCloudsEl = document.createElement('div');
     containerRainCloudsEl.className = 'city-card-container-rain-clouds';
@@ -112,7 +113,9 @@ const cardGen = (obj) => {
 
     const rainValueEl = document.createElement('h4');
     rainValueEl.className = 'city-card-rain-value';
-    rainValueEl.textContent = obj.rain || '0';
+    rainValueEl.textContent = obj.rain && obj.rain['1h'] > 0 ? `${obj.rain['1h']} mm/h` : '0 mm/h';
+
+    /* rainValueEl.textContent = obj.rain || '0'; */
 
     const containerCloudsEl = document.createElement('div');
     containerCloudsEl.className = 'city-card-container-clouds';
@@ -123,7 +126,7 @@ const cardGen = (obj) => {
 
     const cloudsValueEl = document.createElement('h4');
     cloudsValueEl.className = 'city-card-clouds-value';
-    cloudsValueEl.textContent = obj.clouds.all;
+    cloudsValueEl.textContent = `${obj.clouds.all} %`;
 
     containerEl.append(titleCard,
         iconWeatherEl,
@@ -217,9 +220,80 @@ const GET = async (cityName) => {
     }
 };
 
+
+
+function getWindDirection(degrees) {
+    if (degrees >= 0 && degrees < 22.5) {
+        return 'Tramontana - N';
+    } else if (degrees >= 22.5 && degrees < 67.5) {
+        return 'Grecale - NE';
+    } else if (degrees >= 67.5 && degrees < 112.5) {
+        return 'Levante - E';
+    } else if (degrees >= 112.5 && degrees < 157.5) {
+        return 'Scirocco - SE';
+    } else if (degrees >= 157.5 && degrees < 202.5) {
+        return 'Ostro - S';
+    } else if (degrees >= 202.5 && degrees < 247.5) {
+        return 'Libeccio - SO';
+    } else if (degrees >= 247.5 && degrees < 292.5) {
+        return 'Ponente - O';
+    } else if (degrees >= 292.5 && degrees < 337.5) {
+        return 'Maestrale -NO';
+    } else if (degrees >= 337.5 && degrees <= 360) {
+        return 'Tramontana - N';
+    } else {
+        return 'Invalid degrees'; // Gestione dei casi non validi
+    }
+}
+
+const getDataTime = () => {
+
+    const now = new Date();
+
+    const huors = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const dayOfWeek = getStringday(now.getDay());
+
+    const day = now.getDate().toString().padStart(2, '0');
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const year = now.getFullYear();
+    const formattedDate = `${huors}:${minutes} - ${dayOfWeek} ${day}/${month}/${year}`;
+
+    return formattedDate;
+}
+
+const getStringday = (value) => {
+    if (value === 1) {
+        return 'lunedì';
+    } else if (value === 2) {
+        return 'martedì';
+    } else if (value === 3) {
+        return 'mercoledì';
+    } else if (value === 4) {
+        return 'giovedì';
+    } else if (value === 5) {
+        return 'venerdì';
+    } else if (value === 6) {
+        return 'sabato';
+    } else if (value === 7) {
+        return 'domenica';
+    }
+}
+
+const updateTime = () => {
+    const currentDate = getDataTime();
+    const dateEl = document.querySelector('.date');
+    dateEl.textContent = currentDate;
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+
 export {
     cardGen,
     handleRequest,
     handleFeedback,
-    GET
+    GET,
+    getDataTime,
+    getStringday
 }

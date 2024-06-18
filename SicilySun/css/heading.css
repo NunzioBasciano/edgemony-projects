@@ -1,0 +1,23 @@
+.heading {
+    background-color: #4799d1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 16px;
+
+}
+
+.heading img {
+    position: absolute;
+    left: 20px;
+    width: 50px;
+}
+
+h1 {
+    color: #ffe15a;
+    text-align: center;
+    margin: 0;
+    font-weight: 900;
+    font-size: 48px;
+}
