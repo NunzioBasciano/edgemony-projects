@@ -1,8 +1,10 @@
 .select-section {
-    background-color: #4799d1;
-    padding: 16px;
+    /* 
+    background-color: #4799d1; */
+    padding: 24px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -20,4 +22,11 @@
 select {
     border-radius: 8px;
     padding: 16px;
+    border-right: 8px solid transparent
+}
+
+.date {
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
 }

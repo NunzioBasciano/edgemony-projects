@@ -4,24 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Sicily Sun</title>
 </head>
 
 <body>
     <!-- HEADING -->
     <div class="heading">
-        <img src="./images/icon.png" alt="sole">
-        <h1>SICILY SUN</h1>
+        <img src="./images/icon.png" class="sun-icon" alt="sole">
+
+        <div class="date-position">
+            <h1>SICILY SUN</h1>
+            <p class="date"></p>
+        </div>
     </div>
     <!-- END HEADING -->
 
     <!-- SELECT SECTION -->
     <nav class="select-section">
-        <select id="province" name="province">
+        <select id="provinces" name="provinces">
             <option value="">Seleziona una provincia siciliana</option>
             <option value="Agrigento">Agrigento</option>
             <option value="Caltanissetta">Caltanissetta</option>
@@ -33,16 +37,16 @@
             <option value="Siracusa">Siracusa</option>
             <option value="Trapani">Trapani</option>
         </select>
-        <p>Le previsioni sono aggiornate a :</p>
-        <p class="date"></p>
+
         <img src="./images/sicily-flag.png" alt="sole">
     </nav>
+    <!-- END SELECT SECTION -->
 
-    <div class="container-card">
-
-
-    </div>
-
+    <!-- SEA SECTION -->
+    <div class="container-card"></div>
+    <h2 class="sicily-sea">SICILY SEA</h2>
+    <div class="container-sea"></div>
+    <!-- END SEA SECTION -->
     <script type="module" src="script.js"></script>
 
 </body>

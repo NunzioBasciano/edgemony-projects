@@ -1,18 +1,15 @@
-@import url(./css/reset.css);
-@import url(./css/heading.css);
-@import url(./css/select-section.css);
-@import url(./css/media.css);
-
-.container-card {
+.container-card,
+.container-sea {
     margin: 0 auto;
-    background-color: #4799d1;
+    /*  background-color: #4799d1; */
     overflow: hidden;
+
 
 }
 
 .city-card {
     width: 80%;
-    border: 1px solid white;
+    box-shadow: rgba(0, 21, 88, 0.137) 0px 4px 12px;
     border-radius: 16px;
     margin: 16px auto;
     padding: 16px;
@@ -42,7 +39,7 @@
     z-index: 1;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 36px;
+    font-size: 24px;
 }
 
 .city-card-weather-image {
@@ -54,7 +51,8 @@
 .city-card-container-temperature,
 .city-card-container-wind,
 .city-card-container-rain-clouds {
-    border: 1px solid #ffffff;
+
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     z-index: 1
 }

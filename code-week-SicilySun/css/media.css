@@ -1,5 +1,7 @@
 @media only screen and (min-width: 768px) {
-    .container-card {
+
+    .container-card,
+    .container-sea {
         display: flex;
         flex-wrap: wrap;
     }
@@ -10,7 +12,9 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    .container-card {
+
+    .container-card,
+    .container-sea {
         display: flex;
         flex-wrap: wrap;
         padding: 64px;

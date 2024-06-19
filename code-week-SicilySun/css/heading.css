@@ -1,5 +1,5 @@
 .heading {
-    background-color: #4799d1;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,16 +8,22 @@
 
 }
 
-.heading img {
+.sun-icon {
     position: absolute;
-    left: 20px;
+    left: 24px;
     width: 50px;
 }
 
-h1 {
+h1,
+h2 {
     color: #ffe15a;
     text-align: center;
     margin: 0;
     font-weight: 900;
     font-size: 48px;
+}
+
+.date-position {
+    display: flex;
+    flex-direction: column;
 }
