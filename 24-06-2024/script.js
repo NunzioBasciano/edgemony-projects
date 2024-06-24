@@ -14,11 +14,10 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function renderPage(container) {
-    appEl.innerHTML = 'ciao';
+async function renderPage(container) {
 
     const header = getHeaderHTML();
-    const main = getMainHTML();
+    const main = await getMainHTML();
     const footer = getFooterHTML();
 
     const html = header + main + footer
