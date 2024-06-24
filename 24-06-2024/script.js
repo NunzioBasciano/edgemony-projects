@@ -1,5 +1,7 @@
 import { getHeaderHTML } from "./components/header.js";
+import { getAsideHTML } from "./components/aside.js";
 import { getMainHTML } from "./components/main.js";
+import { getSectionHTML } from "./components/sections.js";
 import { getFooterHTML } from "./components/footer.js";
 
 
@@ -17,10 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
 async function renderPage(container) {
 
     const header = getHeaderHTML();
+    const aside = getAsideHTML();
     const main = await getMainHTML();
+    const right = getSectionHTML();
     const footer = getFooterHTML();
 
-    const html = header + main + footer
+    const html = header + aside + main + right + footer;
 
     appEl.innerHTML = html;
 }

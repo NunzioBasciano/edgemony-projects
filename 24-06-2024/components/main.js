@@ -2,25 +2,10 @@ async function getMainHTML() {
     const sectionHTML = await getSectionHTML();
 
     return `
-    <main>
-        ${getAsideHTML()}
-        ${sectionHTML}
-     </main>
+    <main>${sectionHTML}</main>
 `;
 }
 
-function getAsideHTML() {
-    return `<aside class='left'>
-                <h2>Sidebar<h2>
-                <ul>
-                    <li>Side item1</li>
-                    <li>Side item2</li>
-                    <li>Side item3</li>
-                    <li>Side item4</li>
-                    <li>Side item5</li>
-                </ul>      
-            </aside>`;
-}
 
 async function getSectionHTML() {
 
