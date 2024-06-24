@@ -1,0 +1,70 @@
+/* reset */
+* {
+    box-sizing: border-box;
+}
+
+/* background colors */
+#app>.header {
+    background: red
+}
+
+#app>.main {
+    background: white
+}
+
+#app>.left {
+    background: orange
+}
+
+#app>.right {
+    background: green
+}
+
+#app>.footer {
+    background: blue
+}
+
+
+
+/* container */
+#app {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Tutti gli elementi figli di app hanno di default la larghezza del dispositivo (mobile) */
+#app>* {
+    width: 100%;
+    padding: 1rem;
+}
+
+/* tablet breakpoint. Le colonne left e right hanno larghezza 50% in modo da disposrsi sotto il main */
+@media (min-width:768px) {
+
+    #app>.left,
+    #app>.right {
+        width: 50%;
+    }
+}
+
+/* desktop breakpoint- */
+@media (min-width:1024px) {
+    #app>.header {
+        order: -2;
+        /* In questa maniera impostiamo come primo elemento da visualizzare l'header */
+    }
+
+    #app>.left {
+        /* In questa maniera impostiamo .left come primo elemento della riga*/
+        order: -1;
+    }
+
+    #app>.main {
+        width: 50%;
+    }
+
+    #app>.left,
+    #app>.right {
+        width: 25%;
+    }
+}

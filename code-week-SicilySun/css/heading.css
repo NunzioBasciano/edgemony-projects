@@ -1,11 +1,9 @@
 .heading {
-
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     padding: 16px;
-
 }
 
 .sun-icon {
@@ -26,4 +24,10 @@ h2 {
 .date-position {
     display: flex;
     flex-direction: column;
+}
+
+.date {
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
 }

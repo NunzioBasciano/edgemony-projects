@@ -1,4 +1,4 @@
-import { cardGen, GET, getWithCoordinates } from "./modules/components.js";
+import { cardGen, GET, getWithCoordinates, capitalize } from "./modules/components.js";
 
 import { provinces, marineLocations, backgrounds, backgroundsSea } from "./modules/data.js";
 
@@ -10,6 +10,10 @@ const containerSeaEl = document.querySelector('.container-sea');
 
 // Seleziona l'elemento di selezione delle province nel DOM
 const selectElement = document.getElementById('provinces');
+
+const searchFormEl = document.querySelector('#search-location');
+const searchInputEl = document.querySelector('.search-input');
+const defaultBackgroundImage = 'images/background-default.png';
 
 // Funzione asincrona per generare le card delle località marine
 const generateCardsSea = async () => {
@@ -88,6 +92,18 @@ const generateSelectedCard = async (selectedProvince) => {
     }
 };
 
+const generateSearchCard = async (cityName) => {
+    try {
+
+        const data = await GET(cityName);
+        const card = cardGen(data, defaultBackgroundImage, cityName);
+        containerEl.append(card);
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
+
 // Event listener per il cambio della select delle province
 selectElement.addEventListener('change', async function () {
 
@@ -95,6 +111,60 @@ selectElement.addEventListener('change', async function () {
     generateSelectedCard(selectedProvince); // Chiama la funzione per generare la card della provincia selezionata
 });
 
+searchFormEl.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const cityName = searchInputEl.value.trim();
+
+    if (cityName) {
+        containerEl.textContent = '';
+        await generateSearchCard(cityName);
+    }
+})
+
 // Inizializzazione: genera tutte le card delle province e delle località marine
-generateCards();
+/* generateCards(); */
 generateCardsSea();
+
+const addFavoritesBtnEl = document.querySelector('.add-favorites');
+const removeFavoritesBtnEl = document.querySelector('.remove-favorites');
+const inputFavoriteEl = document.querySelector('#favourites-input');
+let favoriteStorage = JSON.parse(localStorage.getItem('favorites')) || [];
+
+addFavoritesBtnEl.addEventListener('click', async (event) => {
+    event.stopPropagation();
+    const favoriteEL = capitalize(inputFavoriteEl.value.trim());
+    if (favoriteEL && !favoriteStorage.includes(favoriteEL)) {
+        favoriteStorage.push(favoriteEL);
+        localStorage.setItem('favorites', JSON.stringify(favoriteStorage));
+        containerEl.innerHTML = '';
+        /*  for (let i = 0; i < favoriteStorage.length; i++) {
+             generateSearchCard(favoriteStorage[i]);
+         } */
+        favoriteStorage.map(el => generateSearchCard(el));
+    }
+});
+
+
+if (favoriteStorage.length > 0) {
+    containerEl.innerHTML = '';
+    for (let i = 0; i < favoriteStorage.length; i++) {
+        generateSearchCard(favoriteStorage[i]);
+    }
+} else {
+    const favoritesContainerEl = document.querySelector('.favorites-list-container');
+    favoritesContainerEl.classList.add('display');
+    generateCards();
+}
+
+
+removeFavoritesBtnEl.addEventListener('click', async (event) => {
+    const deleteEl = capitalize(inputFavoriteEl.value.trim());
+    if (favoriteStorage.includes(deleteEl)) {
+        const indexToDelete = favoriteStorage.indexOf(deleteEl);
+        favoriteStorage.splice(indexToDelete, 1);
+
+        // aggiorna localstorage
+        localStorage.setItem('favorites', JSON.stringify(favoriteStorage));
+    }
+    window.location.reload();
+});

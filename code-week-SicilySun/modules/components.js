@@ -1,6 +1,13 @@
 import { API_KEY } from "../key.js";
 const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
 
+function capitalize(value) {
+    const valueToLowerCase = value.toLowerCase()
+    const firstLetterUppercase = (valueToLowerCase.charAt(0).toUpperCase());
+    const valueWithoutFirstLetter = valueToLowerCase.substring(1);
+    return firstLetterUppercase + valueWithoutFirstLetter;
+}
+
 const cardGen = (obj, backgroundImage, locationName) => {
 
     // Crea il contenitore principale per la scheda della città
@@ -10,7 +17,7 @@ const cardGen = (obj, backgroundImage, locationName) => {
 
     // Crea e imposta il titolo utilizzando il parametro locationName
     const titleCard = document.createElement('h2');
-    titleCard.textContent = locationName;
+    titleCard.textContent = capitalize(locationName);
     titleCard.className = 'city-card-title';
 
     // Crea l'elemento dell'icona meteo
@@ -188,7 +195,7 @@ const cardGen = (obj, backgroundImage, locationName) => {
 }
 
 //  * Funzione asincrona per gestire una richiesta HTTP usando fetch.
-const handleRequest = async (requestUrl, options = '') => {
+const handleRequest = async (requestUrl, options = {}) => {
     try {
         // Esegue la richiesta HTTP con il metodo fetch
         const res = await fetch(requestUrl);
@@ -309,6 +316,7 @@ const getDataTime = () => {
     // Ottiene le ore e i minuti attuali, formattati con due cifre (es. 08:30)
     const huors = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
 
     // Ottiene il giorno della settimana in formato testuale
     const dayOfWeek = getStringday(now.getDay());
@@ -319,7 +327,7 @@ const getDataTime = () => {
     const year = now.getFullYear();
 
     // Costruisce la stringa formattata completa
-    const formattedDate = `${huors}:${minutes} - ${dayOfWeek} ${day}/${month}/${year}`;
+    const formattedDate = `${huors}:${minutes}:${seconds} - ${dayOfWeek} ${day}/${month}/${year}`;
 
     return formattedDate;
 }
@@ -338,7 +346,7 @@ const getStringday = (value) => {
         return 'venerdì';
     } else if (value === 6) {
         return 'sabato';
-    } else if (value === 7) {
+    } else if (value === 0) {
         return 'domenica';
     }
 }
@@ -368,5 +376,6 @@ export {
     GET,
     getDataTime,
     getStringday,
-    getWithCoordinates
+    getWithCoordinates,
+    capitalize
 }

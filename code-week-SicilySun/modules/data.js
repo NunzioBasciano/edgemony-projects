@@ -24,7 +24,8 @@ const backgrounds = [
     { name: 'Ragusa', image: 'images/ragusa-background.jpg' },
     { name: 'Enna', image: 'images/enna-background.jpg' },
     { name: 'Caltanissetta', image: 'images/caltanissetta-background.jpg' },
-    { name: 'Agrigento', image: 'images/agrigento-background.jpg' }
+    { name: 'Agrigento', image: 'images/agrigento-background.jpg' },
+
 ];
 
 
