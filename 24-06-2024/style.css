@@ -117,7 +117,9 @@
   }
 
   /* tablet breakpoint. Le colonne left e right hanno larghezza 50% in modo da disposrsi sotto il main */
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 768px)
+  /* and (max-width: 1024px) */
+      {
 
       #app {
           grid-template-rows: auto 1fr 1fr auto;
