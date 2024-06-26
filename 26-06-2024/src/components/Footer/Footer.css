@@ -1,0 +1,16 @@
+footer {
+    background-color: #f3f4f6;
+}
+
+footer .logo {
+    color: #0d9488;
+}
+
+
+/* Media query per tablet (da 768px a 1023px) */
+@media (max-width: 768px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}

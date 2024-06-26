@@ -1,0 +1,8 @@
+.header {
+    background-color: #111827;
+    color: white;
+}
+
+header .list {
+    gap: 3rem;
+}
