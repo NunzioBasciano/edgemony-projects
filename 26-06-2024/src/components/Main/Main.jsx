@@ -7,7 +7,7 @@ function Main() {
             <main>
                 <div className="container">
                     <div className="main-grid">
-                        <Sidebar />
+                        <Sidebar items={sideElement} />
                         <PostSection />
                     </div>
                 </div>
@@ -57,20 +57,54 @@ function Item(props) {
     )
 }
 
-function Sidebar() {
+const sideElement = [
+    { label: 'General' },
+    {
+        label: 'Teams',
+        subItems: [
+            { label: 'Banned users' },
+            { label: 'Calendar' }
+        ]
+    },
+    { label: 'Billing' },
+    { label: 'Invoices' },
+    {
+        label: 'Account',
+        subItems: [
+            { label: 'Detail' },
+            { label: 'Security' },
+            { label: 'Logout' }
+        ]
+    }
+];
+function Sidebar({ items }) {
+
     return (
         <>
             <aside className='left'>
                 <h2>Logo</h2>
                 <ul className='list'>
-                    <li className='item'>item1</li>
-                    <li className='item'>item2</li>
-                    <li className='item'>item3</li>
-                    <li className='item'>item4</li>
-                    <li className='item'>item5</li>
+                    {items.map((item, index) => (
+                        <SidebarItem key={index} item={item} />
+                    ))}
                 </ul>
             </aside>
         </>
+    )
+}
+
+function SidebarItem({ item }) {
+    return (
+        <li>
+            {item.label}
+            {item.subItems && (
+                <ul>
+                    {item.subItems.map((subItem, index) => (
+                        <li key={index}>{subItem.label}</li>
+                    ))}
+                </ul>
+            )}
+        </li>
     )
 }
 
