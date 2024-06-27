@@ -1,0 +1,18 @@
+.calculator-display {
+    padding: 1.5rem;
+    background-color: white;
+}
+
+
+
+
+.calculator-operation {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.calculator-result {
+    text-align: right;
+    font-size: 2em;
+    background-color: white;
+}

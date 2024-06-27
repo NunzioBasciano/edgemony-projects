@@ -1,0 +1,17 @@
+.container {
+    text-align: center;
+    background-color: #ff8361;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-calculator {
+    max-width: 85%;
+    padding: 1rem 0;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
