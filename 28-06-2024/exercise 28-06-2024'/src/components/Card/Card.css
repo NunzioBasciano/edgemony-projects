@@ -1,0 +1,41 @@
+.card {
+    margin: 1rem;
+    width: 90%;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.3s ease;
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+.card-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 10px solid violet;
+}
+
+.card h2 {
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 1px 15px;
+}
+
+.card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card li {
+    list-style-type: none;
+}

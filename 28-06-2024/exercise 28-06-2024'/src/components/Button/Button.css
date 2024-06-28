@@ -1,0 +1,14 @@
+.button {
+    min-width: 120px;
+    margin-top: 1rem;
+    border-radius: 16px;
+    padding: 0.4rem 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.fucsia {
+
+    border: 2px solid #e871e5;
+
+}
