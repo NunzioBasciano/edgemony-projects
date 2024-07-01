@@ -1,32 +1,40 @@
+ html {
+     background-color: #E8B872;
+ }
+
  #root {
      display: flex;
      justify-content: center;
      padding: 2rem;
+     background-color: #E8B872;
  }
 
  .container-counter {
+     background-color: #72B8E8;
+     aspect-ratio: 16/6;
      width: 100%;
      margin: 1rem;
      border-radius: 16px;
      display: flex;
      flex-direction: column;
-     padding: 2rem;
+     padding: 4rem 2rem;
      gap: 1.5rem;
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
  }
 
  .container-up,
  .container-down {
+     background-color: #72B8E8;
      display: flex;
      justify-content: center;
      gap: 1rem;
  }
 
-
  @media screen and (max-width: 768px) {
 
      .container-counter {
          width: 100%;
+         padding-top: 3rem;
      }
 
  }
