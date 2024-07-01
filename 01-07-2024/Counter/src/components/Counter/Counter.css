@@ -1,0 +1,31 @@
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    box-shadow: #080808 0px 2px 8px;
+    border-radius: 50%;
+    padding: 1.5rem;
+    color: white;
+}
+
+.zero {
+    background-color: #0a8039;
+}
+
+.pair {
+    background-color: #f40d08;
+
+}
+
+.shots {
+    background-color: #080808;
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+}

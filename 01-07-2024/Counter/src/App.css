@@ -1,0 +1,17 @@
+#root {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container-counter {
+    margin: 1rem;
+    width: 90%;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

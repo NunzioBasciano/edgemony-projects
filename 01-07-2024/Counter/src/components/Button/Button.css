@@ -1,0 +1,23 @@
+button {
+    border: 2px solid rgb(232, 113, 229);
+    min-width: 35%;
+    border-radius: 16px;
+    padding: 0.4rem 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    align-self: center;
+    font-size: 36px;
+    font-weight: 400;
+    box-shadow: rgba(232, 113, 229, 0.35) 0px 2px 8px;
+}
+
+button:hover {
+    background-color: rgb(232, 113, 229);
+    color: white;
+}
+
+@media screen and (max-width: 480px) {
+    button {
+        min-width: 25%;
+    }
+}
