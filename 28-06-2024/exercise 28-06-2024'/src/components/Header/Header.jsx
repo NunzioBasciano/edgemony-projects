@@ -10,8 +10,8 @@ function Header(props) {
         </header>
     )
 }
-
-function Menu(props) {
+console.log
+function Menu() {
     const menuItem = [
         { label: 'About us', href: '#' },
         { label: 'Product', href: '#' },
@@ -26,7 +26,8 @@ function Menu(props) {
                 <Item
                     key={item.label}
                     label={item.label}
-                    href={item.href} />
+                    href={item.href}
+                    className={'list-element'} />
             ))}
         </ul>
     )
@@ -34,7 +35,7 @@ function Menu(props) {
 
 function Item(props) {
     return (
-        <li>
+        <li className={props.className}>
             <a href={props.href}>{props.label}</a>
         </li>
     )

@@ -1,17 +1,32 @@
-#root {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
+ #root {
+     display: flex;
+     justify-content: center;
+     padding: 2rem;
+ }
 
-.container-counter {
-    margin: 1rem;
-    width: 90%;
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    gap: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+ .container-counter {
+     width: 100%;
+     margin: 1rem;
+     border-radius: 16px;
+     display: flex;
+     flex-direction: column;
+     padding: 2rem;
+     gap: 1.5rem;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }
+
+ .container-up,
+ .container-down {
+     display: flex;
+     justify-content: center;
+     gap: 1rem;
+ }
+
+
+ @media screen and (max-width: 768px) {
+
+     .container-counter {
+         width: 100%;
+     }
+
+ }

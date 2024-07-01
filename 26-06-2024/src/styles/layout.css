@@ -30,8 +30,8 @@
 }
 
 .menu {
-    display: flex;
-    gap: 16px;
+
+    gap: 1rem;
 }
 
 .logo {

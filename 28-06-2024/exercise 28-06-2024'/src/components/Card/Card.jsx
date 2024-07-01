@@ -15,7 +15,7 @@ function Card(props) {
                     <li>{props.item2}</li>
                     <li>{props.item3}</li>
                 </ul>
-                {props.buttonValue && props.buttonClassName && (<Button className={props.buttonClassName} value={props.buttonValue} />)}
+                <Button className={props.buttonClassName} value={props.buttonValue} />
             </div>
         </>
     )

@@ -31,7 +31,7 @@ function App() {
           className={'product-card'}
           buttonClassName={'fucsia'}
           buttonValue={'click me'}
-        ><Button></Button></Card>
+        ></Card>
         <Card
           title={'Brand strategy'}
           src={'https://www.lunediacolazione.it/wp-content/uploads/2023/05/new-york-insolita-2.jpg'}
@@ -41,7 +41,7 @@ function App() {
           className={'product-card'}
           buttonClassName={'fucsia'}
           buttonValue={'click me'}
-        ><Button></Button></Card>
+        ></Card>
         <Card
           title={'Brand identity'}
           src={'https://www.grazia.it/content/uploads/2024/06/Gelati-Grazia-2024.png'}
@@ -51,7 +51,7 @@ function App() {
           className={'product-card'}
           buttonClassName={'fucsia'}
           buttonValue={'click me'}
-        ><Button></Button></Card>
+        ></Card>
 
       </div >
       <Footer></Footer>

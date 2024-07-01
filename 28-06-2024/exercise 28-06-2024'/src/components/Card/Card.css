@@ -12,7 +12,7 @@
 
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 
@@ -23,6 +23,13 @@
     margin: 0 auto;
     border-radius: 50%;
     border: 10px solid violet;
+    transition: transform 0.3s ease-out, border 0.3s ease-out;
+    transition-delay: 0.3s;
+}
+
+.card-image:hover {
+    transform: scale(1.05);
+
 }
 
 .card h2 {

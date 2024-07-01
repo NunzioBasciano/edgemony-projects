@@ -1,10 +1,19 @@
 .button {
-    min-width: 120px;
+    min-width: 90%;
     margin-top: 1rem;
     border-radius: 16px;
     padding: 0.4rem 1rem;
     font-weight: 800;
     text-transform: uppercase;
+    align-self: center;
+
+}
+
+.button:hover {
+    transition-delay: 0.1s;
+    cursor: pointer;
+    background-color: #e871e5;
+    color: white;
 }
 
 .fucsia {

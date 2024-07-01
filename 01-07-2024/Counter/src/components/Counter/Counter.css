@@ -17,15 +17,20 @@
 
 .pair {
     background-color: #f40d08;
-
 }
 
 .shots {
     background-color: #080808;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+    .counter {
+        width: 50px;
+        height: 50px;
+        padding: 1rem;
+    }
+
     h1 {
-        font-size: 24px;
+        font-size: 18px;
     }
 }
