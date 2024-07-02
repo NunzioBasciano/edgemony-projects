@@ -5,6 +5,28 @@ import adviceArray from './components/data/advices.jsx'
 
 function App() {
 
+  const styleSheets = document.styleSheets;
+
+
+  const ruleList = [];
+  const classArray = [];
+  const output = [];
+
+
+  for (let i = 0; i < styleSheets.length; i++) {
+    ruleList.push(styleSheets[i].rules);
+  }
+
+  for (let i = 0; i < ruleList.length; i++) {
+    classArray.push(ruleList[i])
+  }
+
+  classArray.map((i) => output.push(i));
+
+  console.log(output);
+
+
+
   const [message, setMessage] = useState(1);
 
   function handleClick(e) {
