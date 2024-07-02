@@ -7,23 +7,27 @@ function App() {
 
   const [message, setMessage] = useState(1);
 
-  function handleClick(e) { if (e.target.id) { setMessage(randomNumber()) } }
+  function handleClick(e) {
+    if (e.target.id) {
+      setMessage(randomNumber())
+    }
+  }
 
-  function randomNumber() { return Math.floor(Math.random() * 10) + 1; }
+  function randomNumber() {
+    return Math.floor(Math.random() * 10) + 1;
+  }
 
-
-  let currentAdvice = adviceArray.find(advice => advice.id === message);
-  let title = currentAdvice.id;
-  let description = currentAdvice.advice;
+  const currentAdvice = adviceArray.find(advice => advice.id === message);
+  const title = currentAdvice.id;
+  const description = currentAdvice.advice;
 
   return (
-    <>
-      <Card
-        title={title}
-        description={description}
-        onClick={handleClick}
-      />
-    </>
+
+    <Card
+      title={title}
+      description={description}
+      onClick={handleClick}
+    />
   )
 }
 

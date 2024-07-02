@@ -15,7 +15,6 @@
     font-size: 12px;
     letter-spacing: 3px;
     color: #53ffab;
-
 }
 
 .card_description {
@@ -24,7 +23,6 @@
     font-weight: 500;
     color: #bfd3da;
     letter-spacing: 0.5px;
-
 }
 
 .card_icon_divider {
@@ -45,12 +43,15 @@
     border-radius: 50%;
 }
 
+.card_icon_dice {
+    pointer-events: none;
+    /* Estende l'area dell'evento onclick anche all'immagine */
+}
+
 .card_icon_dice_button:hover {
     box-shadow: #53ffab 0px 0px 50px 4px;
     cursor: pointer;
-
 }
-
 
 @media screen and (min-width: 768px) {
     .card {
