@@ -26,6 +26,12 @@
     letter-spacing: 0.5px;
 }
 
+.card_description::before,
+.card_description::after {
+    content: '"';
+}
+
+
 .card_icon_divider {
     width: 100%;
     height: auto;
