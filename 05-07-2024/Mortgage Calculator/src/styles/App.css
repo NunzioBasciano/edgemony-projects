@@ -1,5 +1,7 @@
 .app {
     display: flex;
+    background-color: var(--White);
+    border-radius: 16px;
 }
 
 @media screen and (max-width: 768px) {

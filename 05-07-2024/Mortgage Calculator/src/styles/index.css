@@ -1,12 +1,13 @@
+@import url('./typography.css');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 body {
-    background-color: #e3f4fc;
+    background-color: var(--Slate100);
 }
 
 #root {
@@ -15,4 +16,5 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    min-width: 1024px;
 }
