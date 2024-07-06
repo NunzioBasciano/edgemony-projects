@@ -13,6 +13,11 @@ function getRates(total, mortgage_term) {
     return parseFloat(total / mortgage_term / 12);
 };
 
+function formatResult(number) {
+    const formatNumber = Intl.NumberFormat('en-US').format(number);
+    return formatNumber;
+};
+
 function Form() {
 
     const inputDefault = {
@@ -112,16 +117,16 @@ function Form() {
                         {input.mortgage_type === 'repayment' && totalRate && (
                             <>
                                 <h3 className={styles.result_secondary_heading}>Your monthly repayments</h3>
-                                <h1 className={styles.result_repayment}>£ {totalRate.toFixed(2)}</h1>
+                                <h1 className={styles.result_repayment}>£ {formatResult(totalRate.toFixed(2))}</h1>
                                 <hr />
                                 <h3 className={styles.result_secondary_heading}>Total you'll repay over the term</h3>
-                                <h1 className={styles.result_repayment}>£ {totalMortgage.toFixed(2)}</h1>
+                                <h1 className={styles.result_repayment}>£ {formatResult(totalMortgage.toFixed(2))}</h1>
                             </>
                         )}
                         {input.mortgage_type === 'interest-only' && totalMortgageInterest && (
                             <>
                                 <h3 className={styles.result_secondary_heading}>Total you'll repay over the term</h3>
-                                <h1 className={styles.result_repayment}>£ {totalMortgageInterest.toFixed(2)}</h1>
+                                <h1 className={styles.result_repayment}>£ {formatResult(totalMortgageInterest.toFixed(2))}</h1>
                             </>
                         )}
                     </div>
