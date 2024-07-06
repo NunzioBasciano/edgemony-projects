@@ -1,72 +1,30 @@
 import styles from './form.module.css';
-import { useState } from 'react';
 
-function getInterest(interestRate, mortgage_amount) {
-    return parseFloat(mortgage_amount * interestRate / 100);
-}
+// Componente Form per gestire l'inserimento dei dati del mutuo
+function Form({ input, setInput, handleSubmit }) {
 
-function getTotal(mortgage_amount, interest) {
-    return parseFloat(mortgage_amount) + parseFloat(interest);
-}
+    // Viene chiamata ogni volta che l'utente modifica un input.
+    function handleChange(e) {
 
-function getRates(total, mortgage_term) {
-    return parseFloat(total / mortgage_term / 12);
-};
+        // Dichiara due variabili per gestire l'input name e value. ovvero const name = e.target.name e const value = e.target.value.
+        const { name, value } = e.target;
 
-function formatResult(number) {
-    const formatNumber = Intl.NumberFormat('en-US').format(number);
-    return formatNumber;
-};
+        // Viene modificata la variabile "input" con i nuovi valori inseriti dall'utente.
+        setInput((prevState) => ({
 
-function Form() {
-
-    const inputDefault = {
-        mortgage_amount: '',
-        mortgage_term: '',
-        interest_rate: '',
-        mortgage_type: ''
+            // Ricopia dell'oggetto "input" con i nuovi valori inseriti dall'utente.
+            ...prevState,
+            [name]: value,
+        }));
     }
 
-    const [input, setInput] = useState(inputDefault);
-    const [totalRate, setTotalRates] = useState(null);
-    const [totalMortgage, setTotalMortgage] = useState(null);
-    const [totalMortgageInterest, setTotalMortgageInterest] = useState(null);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
+    //Resetta tutti i campi del form e i risultati.
     function clear() {
         setInput(inputDefault);
         setTotalRates(null);
         setTotalMortgage(null);
         setTotalMortgageInterest(null);
         setIsSubmitted(false);
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (input.mortgage_amount !== '' && input.mortgage_term !== '' && input.interest_rate !== '' && input.mortgage_type !== '') {
-            const interest = getInterest(input.interest_rate, input.mortgage_amount);
-            const total = getTotal(input.mortgage_amount, interest);
-            const rate = getRates(total, input.mortgage_term);
-            setTotalMortgage(total);
-            setTotalMortgageInterest(interest);
-
-            if (input.mortgage_type === 'repayment') {
-                setTotalRates(rate);
-            } else {
-                setTotalRates(null);
-            }
-            setIsSubmitted(true);
-        } else {
-            alert('Please fill in all fields');
-        }
-    }
-
-    function handleChange(e) {
-        const { name, value } = e.target;
-        setInput((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }));
     }
 
     return (
@@ -103,35 +61,6 @@ function Form() {
                     <input className={styles.form_button} type="submit" value='Calculate Repayments' />
                 </form>
             </div>
-            {!isSubmitted ? (
-                <div className={styles.default_section}>
-                    <img className={styles.default_section_image} src="../.././public/images/illustration-empty.svg" alt="calculator-img" />
-                    <h2 className={styles.result_title}>Result shown here</h2>
-                    <p className={styles.result_paragraph}> Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
-                </div>
-            ) : (
-                <div className={styles.result_section}>
-                    <h2 className={styles.result_title}>Your results</h2>
-                    <p className={styles.result_paragraph}>Your result is shown below based on the information you provided. To adjust the result, edit the form and click "Calculate repayments" again.</p>
-                    <div className={styles.result_container}>
-                        {input.mortgage_type === 'repayment' && totalRate && (
-                            <>
-                                <h3 className={styles.result_secondary_heading}>Your monthly repayments</h3>
-                                <h1 className={styles.result_repayment}>£ {formatResult(totalRate.toFixed(2))}</h1>
-                                <hr />
-                                <h3 className={styles.result_secondary_heading}>Total you'll repay over the term</h3>
-                                <h1 className={styles.result_repayment}>£ {formatResult(totalMortgage.toFixed(2))}</h1>
-                            </>
-                        )}
-                        {input.mortgage_type === 'interest-only' && totalMortgageInterest && (
-                            <>
-                                <h3 className={styles.result_secondary_heading}>Total you'll repay over the term</h3>
-                                <h1 className={styles.result_repayment}>£ {formatResult(totalMortgageInterest.toFixed(2))}</h1>
-                            </>
-                        )}
-                    </div>
-                </div>
-            )}
         </>
     );
 }

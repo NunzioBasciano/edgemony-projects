@@ -1,0 +1,51 @@
+.default_section {
+
+    justify-content: center;
+    align-items: center;
+}
+
+.default_section_image {
+    background-color: #10303f;
+}
+
+.result_section,
+.default_section {
+    border-radius: 8px;
+    background-color: #10303f;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 400px;
+    padding: 2rem;
+    color: white;
+}
+
+.result_title {
+    color: white;
+}
+
+.result_paragraph {
+    line-height: 1.5rem;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.result_container {
+    background-color: #0c2331;
+    border-top: #d6da2d 4px solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+}
+
+.result_secondary_heading {
+    font-size: 16px;
+}
+
+.result_repayment {
+    color: #d6da2d;
+}
