@@ -1,8 +1,6 @@
 import styles from './form.module.css';
-/* import images from '../../../public/images/calculator.jpg' */
 
-
-function Form({ input, setInput, handleSubmit }) {
+function Form({ input, setInput, handleSubmit, setTotalRates, setTotalMortgage, setTotalMortgageInterest, setIsSubmitted }) {
 
     const inputDefault = {
         mortgage_amount: '',
@@ -26,11 +24,6 @@ function Form({ input, setInput, handleSubmit }) {
         setTotalMortgageInterest(null);
         setIsSubmitted(false);
     }
-
-    function formatResult(number) {
-        const formatNumber = parseInt(Intl.NumberFormat('en-US').format(number));
-        return formatNumber;
-    };
 
     return (
         <>

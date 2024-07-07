@@ -139,6 +139,10 @@ a {
     width: 70%;
 }
 
+.form_button:hover .form_input_button {
+    cursor: pointer;
+}
+
 span img {
     background-color: var(--lime);
     color: var(--Slate900);
@@ -170,26 +174,29 @@ input::-webkit-inner-spin-button {
 
     .form_input_placeholder_left,
     .form_input_placeholder_right,
-    .form_input_container_amount {
+    .form_input_container_amount,
+    .form_radio_input {
         background-color: var(--lime);
+        cursor: pointer;
     }
 }
 
 .form_input_left:focus,
 .form_input_right:focus {
     outline: none;
+
     /* remove black borden into input when clicked */
 }
 
 .form_radio_input:hover {
     border: 1px solid var(--lime);
+    cursor: pointer;
 }
 
 .form_radio_input:hover .mortgage_type_radio_label {
     color: var(--lime);
+    cursor: pointer;
 }
-
-
 
 /* media query */
 
@@ -197,12 +204,12 @@ input::-webkit-inner-spin-button {
 
     .form_term_rate {
         flex-direction: column;
-
     }
 
     .form_term_rate_item {
         width: 100%;
     }
+
 
 }
 
