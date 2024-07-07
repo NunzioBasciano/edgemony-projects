@@ -1,7 +1,9 @@
 .app {
-    display: flex;
     background-color: var(--White);
     border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 @media screen and (max-width: 768px) {

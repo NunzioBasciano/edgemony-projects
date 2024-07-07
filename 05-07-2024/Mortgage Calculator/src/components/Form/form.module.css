@@ -7,13 +7,17 @@
     flex-direction: column;
 }
 
+
 .form_section {
     background-color: var(--White);
-    flex: 1;
     border-radius: 16px 0 0 16px;
-    gap: 1.5rem;
-    padding: 2.5rem 2rem;
-    width: 50%;
+    gap: 2rem;
+    max-width: 50%;
+    padding: 2rem;
+}
+
+.form {
+    gap: 1rem;
 }
 
 .form_title_container {
@@ -30,38 +34,108 @@ h2 {
 a {
     color: var(--Slate700);
     text-underline-position: under;
-    ;
+
 }
 
-.form {
-    gap: 2rem;
-}
+
 
 .form_Mortgage_amount,
 .form_term_rate,
 .form_term_rate_item,
 .form_mortgage_type {
-    gap: 1rem;
+    gap: 0.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.form_input_container,
+.form_input_container_amount {
+    display: flex;
+    border: 1px solid var(--Slate500);
+    border-radius: 4px;
 }
 
 .form_input_container {
-    display: flex;
+    justify-content: space-between;
 }
 
-.form_input,
-.form_radio_input {
+
+.form_input_container:hover,
+.form_input_container_amount:hover {
+    border: 1px solid var(--lime);
+
+    .form_input_placeholder_left,
+    .form_input_placeholder_right,
+    .form_input_container_amount {
+        background-color: var(--lime);
+    }
+}
+
+.form_input {
     border: 1px solid var(--Slate700);
-    border-left: none;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 4px;
     padding: 1rem;
     flex: 1;
 }
 
-.form_input_placeholder {
+.form_input_left,
+.form_input_right {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    padding: 1rem;
+}
+
+.form_input_left {
+    border: none;
+    border-left: none;
+    border-radius: 0px 4px 4px 0px;
+    flex: 1;
+}
+
+.form_input_left:focus,
+.form_input_right:focus {
+    outline: none;
+    /* remove black borden into input when clicked */
+}
+
+
+.form_input_right {
+    border: none;
+    border-right: none;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.form_radio_input {
+    border: 1px solid var(--Slate700);
+    border-radius: 4px;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex: 1;
+}
+
+.form_radio_input:hover {
+    border: 1px solid var(--lime);
+    color: var(--lime);
+}
+
+
+.form_input_placeholder_left {
     background-color: var(--Slate100);
     border-radius: 4px 0px 0px 4px;
-    border: 1px solid var(--Slate700);
-    border-right: none;
+    padding: 1rem;
+}
+
+
+.form_input_placeholder_right {
+    background-color: var(--Slate100);
+    border-radius: 0px 4px 4px 0px;
     padding: 1rem;
 }
 
@@ -70,12 +144,24 @@ a {
     justify-content: space-between;
 }
 
-.form_term_rate_item {
-    flex: 1;
+.form_term_rate_item,
+.form_input_right {
+    width: 50%;
 }
 
 .form_mortgage_type {
     justify-content: center;
+}
+
+.input_type {
+    font-weight: 900;
+}
+
+.mortgage_type_radio_label {
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--Slate900);
 }
 
 span img {
@@ -91,19 +177,21 @@ span img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-top: 1rem;
+    padding: 0.8rem 1rem;
     width: 70%;
 }
 
-.form_button input {
+.form_input_button {
     background-color: var(--lime);
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Plus Jakarta Sans", sans-serif;
-
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 900;
     color: var(--Slate900);
 }
 

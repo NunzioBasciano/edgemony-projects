@@ -26,7 +26,7 @@ function ResultComponent({ input, totalRate, totalMortgage, totalMortgageInteres
                             <h1 className={styles.result_repayment}>£ {formatResult(totalRate.toFixed(2))}</h1>
                             <hr />
                             <h3 className={styles.result_secondary_heading}>Total you'll repay over the term</h3>
-                            <h1 className={styles.result_repayment}>£ {formatResult(totalMortgage.toFixed(2))}</h1>
+                            <h2 className={styles.result_repayment_secondary}>£ {formatResult(totalMortgage.toFixed(2))}</h2>
                         </>
                     )}
                     {input.mortgage_type === 'interest-only' && totalMortgageInterest && (

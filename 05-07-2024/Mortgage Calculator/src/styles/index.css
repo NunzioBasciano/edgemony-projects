@@ -8,13 +8,6 @@
 
 body {
     background-color: var(--Slate100);
-}
+    padding: 2rem 12rem;
 
-#root {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 1024px;
 }
