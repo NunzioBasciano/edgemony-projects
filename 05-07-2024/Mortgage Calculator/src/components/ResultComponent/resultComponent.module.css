@@ -61,3 +61,30 @@
 .result_repayment_secondary {
     color: var(--White);
 }
+
+
+@media screen and (max-width: 1024px) {
+    .default_section {
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .result_section {
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .default_section {
+        border-radius: 0;
+    }
+
+    .result_section {
+        border-radius: 0;
+    }
+
+    .result_repayment {
+        font-size: 2rem;
+    }
+}

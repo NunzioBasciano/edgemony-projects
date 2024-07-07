@@ -6,9 +6,10 @@
     align-items: stretch;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1024px) {
     .app {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
     }
 }
