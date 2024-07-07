@@ -1,0 +1,26 @@
+@import url('./typography.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Slate100);
+    padding: 1rem 12rem;
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 1rem 6rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+}
